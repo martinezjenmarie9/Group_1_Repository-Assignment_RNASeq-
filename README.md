@@ -1,6 +1,6 @@
 # RNA-seq Analysis of Heat Stress-Induced Transposon Activation Correlates with 3D Chromatin Organization Rearrangement in Arabidopsis
 
-## 1. Group Information
+## Group Information
 
 ### Group Number
 **Group:** Group 1  
@@ -24,11 +24,11 @@ Sun, L., Jing, Y., Liu, X., Li, Q., Xue, Z., Cheng, Z., Wang, D., He, H., & Qian
 
 
 
-## 3. Research Question
+## Research Question
 
 The researchers wanted to know whether heat stress changes how DNA is physically organized inside the nucleus and whether these changes are connected to the activation of normally silenced transposable elements.
 
-## 4. Organism and Tissue
+## Organism and Tissue
 
 | Information | Description |
 |---|---|
@@ -38,7 +38,7 @@ The researchers wanted to know whether heat stress changes how DNA is physically
 
 ---
 
-## 5. Experimental Conditions
+## Experimental Conditions
 
 ### Control
 
