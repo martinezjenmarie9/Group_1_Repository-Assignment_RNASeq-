@@ -128,7 +128,7 @@ The original study used the following RNA-seq analysis pipeline:
 ## Differences between the authors' pipeline and the group's pipeline
 The group followed the original authors' RNA-seq workflow as closely as possible using the available resources in Galaxy. The authors used the Arabidopsis thaliana TAIR10 reference genome with Araport11 annotations, while the group obtained the reference genome from NCBI and used the available TAIR10.57 GTF annotation. For read alignment, the authors used TopHat2, but the group used TopHat because TopHat2 was not available among the Galaxy tools accessible to the group. The remaining steps, including read trimming, SAMtools processing, and featureCounts, were performed using the available Galaxy tools and settings that most closely matched the original workflow.
 
-## 1. Quality Control Results
+## Quality Control Results
 
 Quality control of the RNA-seq reads was assessed using FastQC, and the results from all samples were summarized using MultiQC.
 
@@ -154,7 +154,7 @@ The MultiQC report also indicated that 20% of the FastQC modules were marked as 
 
 > **Note:** The MultiQC values reported here summarize the available FastQC results for the RNA-seq datasets analyzed in this study.
 
-## 1RNA-seq Mapping Results
+## RNA-seq Mapping Results
 
 The RNA-seq reads were mapped to the *Arabidopsis thaliana* reference genome using TopHat in Galaxy. The mapping results were evaluated based on the total number of input read pairs, overall mapping percentage, and percentage of uniquely mapped reads.
 
