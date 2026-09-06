@@ -127,3 +127,29 @@ The original study used the following RNA-seq analysis pipeline:
 
 ## Differences between the authors' pipeline and the group's pipeline
 The group followed the original authors' RNA-seq workflow as closely as possible using the available resources in Galaxy. The authors used the Arabidopsis thaliana TAIR10 reference genome with Araport11 annotations, while the group obtained the reference genome from NCBI and used the available TAIR10.57 GTF annotation. For read alignment, the authors used TopHat2, but the group used TopHat because TopHat2 was not available among the Galaxy tools accessible to the group. The remaining steps, including read trimming, SAMtools processing, and featureCounts, were performed using the available Galaxy tools and settings that most closely matched the original workflow.
+
+## 1. Quality Control Results
+
+Quality control of the RNA-seq reads was assessed using FastQC, and the results from all samples were summarized using MultiQC.
+
+The main quality metrics obtained from the MultiQC report were sequence duplication, GC content, average sequence length, median sequence length, and FastQC module failures.
+
+**MultiQC Summary**
+
+| QC Metric | Forward Reads | Reverse Reads |
+|---|---:|---:|
+| % Duplicates | 59.45% | 56.40% |
+| % GC | 45.02% | 45.01% |
+| Average Sequence Length | 150 bp | 150 bp |
+| Median Sequence Length | 150 bp | 150 bp |
+| % FastQC Modules Failed | 20.0% | 20.0% |
+
+**Interpretation**
+
+The RNA-seq reads had an average and median sequence length of 150 bp, which is consistent with the paired-end 150-bp sequencing used in the original study. The GC content was approximately 45% for both forward and reverse reads.
+
+The sequence duplication levels were 59.45% for forward reads** and 56.40% for reverse reads. These values indicate a relatively high level of sequence duplication, which should be considered when interpreting the sequencing quality.
+
+The MultiQC report also indicated that 20% of the FastQC modules were marked as failed. These results were reviewed together with the other QC metrics rather than using the failure percentage alone to determine whether the data were suitable for further analysis.
+
+> **Note:** The MultiQC values reported here summarize the available FastQC results for the RNA-seq datasets analyzed in this study.
