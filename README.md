@@ -113,8 +113,8 @@ The original study used the following RNA-seq analysis pipeline:
                        │
                        ▼
               ┌───────────────┐
-              │  featureCounts │
-              │ Gene/TE counts │
+              │ featureCounts │
+              │ Gene/TE counts│
               └───────┬───────┘
                       │
                       ▼
@@ -126,6 +126,4 @@ The original study used the following RNA-seq analysis pipeline:
             Expressed Genes / TEs
 
 ## Differences between the authors' pipeline and the group's pipeline
-The group followed the authors' RNA-seq workflow as closely as possible using Galaxy. Both pipelines used Trim Galore, TAIR10, 
-TopHat2, SAMtools, and featureCounts. The main difference was the annotation: the authors used Araport11 annotations with the TAIR10 genome, while the group used the TAIR10.57 GTF available in Galaxy.
-
+The group followed the original authors' RNA-seq workflow as closely as possible using the available resources in Galaxy. The authors used the Arabidopsis thaliana TAIR10 reference genome with Araport11 annotations, while the group obtained the reference genome from NCBI and used the available TAIR10.57 GTF annotation. For read alignment, the authors used TopHat2, but the group used TopHat because TopHat2 was not available among the Galaxy tools accessible to the group. The remaining steps, including read trimming, SAMtools processing, and featureCounts, were performed using the available Galaxy tools and settings that most closely matched the original workflow.
