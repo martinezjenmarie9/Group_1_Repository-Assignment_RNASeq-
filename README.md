@@ -43,11 +43,11 @@ The researchers wanted to know whether heat stress changes how DNA is physically
 
 ### Control
 
-Wild-type *Arabidopsis thaliana* Col-0 seedlings were grown under normal growth conditions at a constant **22 °C** with a **12-hour photoperiod**. The plants were grown on **½ Murashige and Skoog (MS) medium containing 1% sucrose and 0.7% agar**.
+Wild-type *Arabidopsis thaliana* Col-0 seedlings were grown under normal growth conditions at a constant 22 °C with a 12-hour photoperiod. The plants were grown on ½ Murashige and Skoog (MS) medium containing 1% sucrose and 0.7% agar.
 
 ### Treatment
 
-For the heat-stress treatment, **7-day-old Col-0 seedlings** were exposed to alternating temperatures of **37 °C and 22 °C**, with each temperature maintained for **12 hours**, for a total of **3 days** under a **12-hour photoperiod**.
+For the heat-stress treatment, 7-day-old Col-0 seedlings were exposed to alternating temperatures of 37 °C and 22 °C, with each temperature maintained for 12 hours, for a total of 3 days under a 12-hour photoperiod.
 
 | Condition | Temperature | Duration | Photoperiod |
 |---|---|---|---|
@@ -82,34 +82,34 @@ The original study used the following RNA-seq analysis pipeline:
                  RNA-seq Samples
                        │
                        ▼
-          Illumina HiSeq 4000
-          Paired-end, 150 bp
+               Illumina HiSeq 4000
+               Paired-end, 150 bp
                        │
                        ▼
-              Trim Galore
-        Adapter + quality trimming
-        --paired --length 70
+                  Trim Galore
+            Adapter + quality trimming
+                paired length 70
                        │
                        ▼
-              Clean Reads
+                  Clean Reads
                        │
                        ▼
-                TopHat2
-           Read alignment to
-             Arabidopsis TAIR10
-       (Araport11-guided annotation)
+                   TopHat2
+                Read alignment to
+               Arabidopsis TAIR10
+           (Araport11-guided annotation)
                        │
                        ▼
-               SAMtools
-       ┌──────────┬──────────┐
-       │          │          │
-     Sort       Index      Compress
-       │          │          │
-       └──────────┴──────────┘
+                    SAMtools
+            ┌──────────┬──────────┐
+            │          │          │
+          Sort       Index      Compress
+            │          │          │
+            └──────────┴──────────┘
                        │
                        ▼
-          Unique-read filtering
-       Multi-mapped reads removed
+             Unique-read filtering
+           Multi-mapped reads removed
                        │
                        ▼
               ┌───────────────┐
@@ -118,13 +118,12 @@ The original study used the following RNA-seq analysis pipeline:
               └───────┬───────┘
                       │
                       ▼
-                  DESeq2
-          Differential Expression
+                    DESeq2
+             Differential Expression
                       │
                       ▼
-             Differentially
-             Expressed Genes
-                    / TEs
+                Differentially
+            Expressed Genes / TEs
 
 ## Differences between the authors' pipeline and the group's pipeline
 The group followed the authors' RNA-seq workflow as closely as possible using Galaxy. Both pipelines used Trim Galore, TAIR10, 
