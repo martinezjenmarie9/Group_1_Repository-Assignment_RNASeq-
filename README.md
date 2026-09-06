@@ -153,3 +153,24 @@ The sequence duplication levels were 59.45% for forward reads** and 56.40% for r
 The MultiQC report also indicated that 20% of the FastQC modules were marked as failed. These results were reviewed together with the other QC metrics rather than using the failure percentage alone to determine whether the data were suitable for further analysis.
 
 > **Note:** The MultiQC values reported here summarize the available FastQC results for the RNA-seq datasets analyzed in this study.
+
+## 1RNA-seq Mapping Results
+
+The RNA-seq reads were mapped to the *Arabidopsis thaliana* reference genome using TopHat in Galaxy. The mapping results were evaluated based on the total number of input read pairs, overall mapping percentage, and percentage of uniquely mapped reads.
+
+**Mapping Statistics** 
+
+| Sample | Total Reads | Overall Mapped (%) | Uniquely Mapped (%) | Unusually Low Mapping |
+|---|---:|---:|---:|---|
+| Control-Rep1 | 32,997,552 read pairs | 90.8% | 96.2% | None |
+| Control-Rep2 | 32,818,658 read pairs | 89.4% | 96.1% | None |
+| Heat-Rep1 | 33,399,259 read pairs | 92.0% | 94.6% | None |
+| Heat-Rep2 | 25,815,822 read pairs | 91.8% | 94.5% | None |
+
+**Mapping Result Interpretation**
+
+The overall mapping rates ranged from 89.4% to 92.0% across the four samples. The percentage of uniquely mapped reads ranged from 94.5% to 96.2% among the mapped reads. Overall, the samples showed good mapping performance, and none of the samples had an unusually low mapping rate.
+
+The high mapping percentages indicate that most of the sequencing reads were successfully aligned to the *Arabidopsis thaliana* reference genome, allowing the samples to proceed to downstream read-counting analysis using featureCounts.
+
+> **Note:** The uniquely mapped percentage represents the proportion of mapped aligned reads classified as unique and should not be interpreted as the percentage of all input reads.
