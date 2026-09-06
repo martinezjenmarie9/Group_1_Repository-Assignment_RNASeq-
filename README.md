@@ -13,6 +13,7 @@
 | Gedden D. Estrevillo | Literature lead  |
 | Eugene Kim Ansag     | Data lead        |
 | Ray Gee J. Lisondra  | Galaxy lead      |
+| Jen Marie A. Martinez  | Documentation lead      |
 | Jerson Lloyd Ortega  | Interpretation lead|
 
 
