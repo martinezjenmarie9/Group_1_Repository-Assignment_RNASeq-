@@ -174,3 +174,40 @@ The overall mapping rates ranged from 89.4% to 92.0% across the four samples. Th
 The high mapping percentages indicate that most of the sequencing reads were successfully aligned to the *Arabidopsis thaliana* reference genome, allowing the samples to proceed to downstream read-counting analysis using featureCounts.
 
 > **Note:** The uniquely mapped percentage represents the proportion of mapped aligned reads classified as unique and should not be interpreted as the percentage of all input reads.
+
+## Differential Gene Expression
+
+### DESeq2 Results
+
+| Category | Observation |
+|---|---|
+| **Number of genes tested** | 32,833 |
+| **Number of significantly differentially expressed genes** | 541 genes |
+| **Genes with positive log2 fold change** | AT4G26530, AT1G54000, AT3G05730 |
+| **Genes with negative log2 fold change** | AT1G09140, AT1G80130, AT5G47600 |
+| **Adjusted p-value / FDR threshold** | 0.05 |
+
+## Simple Interpretation of DESeq2 Results
+
+| Result | Simple Meaning |
+|---|---|
+| **Positive log2 fold change** | Gene expression is higher in the treatment/stress condition, depending on the comparison direction. |
+| **Negative log2 fold change** | Gene expression is lower in the treatment/stress condition, depending on the comparison direction. |
+| **Adjusted p-value < 0.05** | The expression difference is considered statistically significant. |
+| **Adjusted p-value ≥ 0.05** | The analysis does not provide strong statistical evidence of differential expression. |
+
+---
+
+## Selected Genes for Biological Interpretation
+
+| Gene ID | Log2 Fold Change | Adjusted p-value | Regulation Status | Known or Predicted Function | Connection to Stress |
+|---|---:|---:|---|---|---|
+| **AT5G59720** | -11.42 | 0 | Downregulated | Low molecular weight heat shock protein / chaperone | **Heat / Osmotic Stress:** Typically acts as a molecular chaperone to protect proteins from heat denaturation. Its strong downregulation may indicate cellular shutdown or reprioritization under prolonged stress conditions. |
+| **AT5G48570** | -6.77 | 0 | Downregulated | Purple acid phosphatase superfamily protein; dual-localized to mitochondria and chloroplasts and involved in carbon metabolism | **Salinity / Metabolic Stress:** Downregulation may be associated with reduced phosphate recycling and changes in organellar carbon metabolism under adverse environmental conditions. |
+| **AT2G29500** | -10.17 | 0 | Downregulated | Class I small heat shock protein (17.6 kDa molecular chaperone) | **Heat / Oxidative Stress:** Functions in preventing protein aggregation and helping manage cellular damage associated with heat and oxidative stress. |
+| **AT1G70850** | 4.32 | 5.25 × 10^-115 | Upregulated | Major Latex Protein (MLP)-like protein 34 | **Infection / Pathogen Defense:** Associated with defense signaling responses, pathogen invasion, and cross-talk between biotic and abiotic stress responses. |
+| **AT2G42530** | 4.37 | 3.91 × 10^-151 | Upregulated | Cold-regulated 15B protein; LEA-like chaperone | **Salinity / Osmotic / Temperature Stress:** Associated with protection of chloroplast stromal membranes against dehydration, osmotic stress, and abiotic membrane damage. |
+
+## Overall Interpretation
+
+The DESeq2 analysis identified 541 significantly differentially expressed genes using an adjusted p-value threshold of 0.05. Both upregulated and downregulated genes were observed. The selected genes show changes in expression associated with heat, osmotic, metabolic, oxidative, and pathogen-related stress responses, suggesting that environmental stress can affect several cellular processes, including protein protection, metabolism, membrane stability, and defense signaling.
