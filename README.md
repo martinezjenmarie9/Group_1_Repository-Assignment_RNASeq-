@@ -211,3 +211,30 @@ The high mapping percentages indicate that most of the sequencing reads were suc
 ## Overall Interpretation
 
 The DESeq2 analysis identified 541 significantly differentially expressed genes using an adjusted p-value threshold of 0.05. Both upregulated and downregulated genes were observed. The selected genes show changes in expression associated with heat, osmotic, metabolic, oxidative, and pathogen-related stress responses, suggesting that environmental stress can affect several cellular processes, including protein protection, metabolism, membrane stability, and defense signaling.
+
+
+# Comparison with the Published Results
+
+| Analysis Step | Original Authors | Our Galaxy Re-analysis |
+|---|---|---|
+| **Highlighted genes** | Heat-shock genes such as **HSP70, HSP101, HSP21, and HSP18.2** | The same specific highlighted genes were not confirmed. Other heat-shock and stress-related genes, such as **AT5G59720** and **AT2G29500**, were identified |
+| **Overall biological response** | Heat stress caused major changes in gene expression, including activation of heat-shock-related genes | Heat stress also caused changes in gene expression, with **541 significant DEGs**, including heat- and stress-related genes |
+| **Mapping results** | RNA-seq reads were mapped to the reference genome using the authors' workflow | High overall mapping rates of approximately **89–92%** were obtained |
+| **Gene counting** | **featureCounts** was used to obtain gene counts | **featureCounts** was used to obtain gene counts |
+| **Differential expression** | **DESeq2** identified **4,767 significant genes** under heat stress: 2,711 upregulated and 2,056 downregulated | **DESeq2** identified **541 significant DEGs**, including both upregulated and downregulated genes |
+| **RNA-seq aligner** | **TopHat2** | **TopHat**, because TopHat2 was not available in our Galaxy tools |
+| **Reference genome** | **TAIR10** | *Arabidopsis thaliana* reference genome obtained from **NCBI** |
+| **Annotation** | **Araport11** | **NCBI annotation** |
+| **Samples analyzed** | Control, Heat, and Recovery samples were included in the original study | **4 samples available in our assigned dataset:** 2 Control and 2 Heat |
+
+## Limitations
+
+One limitation of our re-analysis was that we could not reproduce some parts of the authors' workflow exactly. The authors used TopHat2 for RNA-seq alignment, but we used TopHat because TopHat2 was not available in our Galaxy tools. We also could not obtain the same TAIR10 reference genome and Araport11 annotation used in the study because access to the original resources required a subscription. Instead, we obtained the Arabidopsis thaliana reference genome and annotation from NCBI. These differences may have affected read alignment, gene assignment, and differential expression results. Therefore, our analysis reproduced the general workflow, but differences in the software and reference files may have contributed to why we identified 541 significant DEGs, compared with the 4,767 significant genes reported by the authors.
+
+## Group Conclusion 
+
+Overall, this activity helped us understand how RNA-seq can be used to study gene expression by sequencing RNA-derived fragments and measuring the number of reads associated with each gene. We learned that the genome FASTA provides the organism's DNA sequence, while RNA-seq FASTQ files contain the actual sequencing reads with quality information. We also learned that genome annotation is important because it provides the locations and identities of genes and other genomic features, allowing reads to be assigned and counted correctly.
+
+Through the analysis, we understood the importance of biological replicates, normalization, and adjusted p-values in making reliable comparisons between samples. We also learned how to interpret upregulated and downregulated genes using changes in transcript abundance and log2 fold change. Changes in gene expression can help organisms respond to environmental stress by altering genes involved in protection, metabolism, and defense. However, we also learned that increased RNA abundance does not always mean increased functional protein because protein production and regulation can occur at different levels.
+
+Finally, this activity showed us that RNA-seq results may differ between analyses because of differences in reference genomes, annotations, read processing, filtering, software, and analysis parameters. Therefore, careful documentation and consistent methods are important for reproducibility. Overall, RNA-seq provides a powerful way to examine how gene expression changes under different biological conditions and helps us better understand how organisms respond to stress.
