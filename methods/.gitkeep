@@ -1,1 +1,56 @@
+## Methods 
+
+** RNA-seq Dataset
+
+The RNA-seq dataset was obtained from the study by Sun et al. (2020), which investigated heat stress-induced changes in *Arabidopsis thaliana*. Our assigned dataset contained four samples: **two control samples and two heat-stress samples**. The samples were analyzed using the Galaxy platform.
+
+** Quality Control
+
+The raw paired-end RNA-seq FASTQ files were first evaluated using **FastQC** to assess the quality of the sequencing reads. The results were summarized using **MultiQC**. The reads had an average and median length of **150 bp**, with a GC content of approximately **45%**. The quality assessment showed that the sequencing reads were generally of good quality and suitable for further analysis.
+
+** Read Trimming
+
+The raw RNA-seq reads were processed to remove low-quality or unwanted portions of the reads before alignment. **Trim Galore** was used for paired-end read trimming. This step was performed to improve the quality of the reads and prepare them for alignment to the reference genome.
+
+** Reference Genome and Annotation
+
+The reference genome and annotation used for the analysis were obtained from **NCBI**. The original study used the **TAIR10 reference genome with Araport11 annotation**. However, we could not obtain the same reference resources because access to the TAIR10 resource required a subscription. Therefore, the available *Arabidopsis thaliana* genome and annotation from NCBI were used as the closest available alternative.
+
+** Read Alignment
+
+The trimmed paired-end reads were aligned to the *Arabidopsis thaliana* reference genome using **TopHat** in Galaxy. The original study used **TopHat2**, but TopHat2 was not available in our Galaxy tools, so TopHat was used as the closest available alternative.
+
+The alignment results showed high mapping rates across the samples. The control samples had approximately **89–91% overall mapping**, while the heat-stress samples had approximately **92% overall mapping**. The unique mapping rates were approximately **94–96%**.
+
+** BAM Processing and Filtering
+
+The resulting alignment files were processed in Galaxy to prepare them for downstream gene counting. The alignment files were sorted and processed before being used for read counting. A **MAPQ filtering step with a threshold of 50** was also applied to retain reads with high mapping quality.
+
+** Gene Counting
+
+After alignment processing, **featureCounts** was used to assign mapped RNA-seq reads to annotated genes and generate a gene count table. The resulting counts represented the number of sequencing reads assigned to each gene in each sample.
+
+** Differential Expression Analysis
+
+The gene count data were analyzed using **DESeq2** to compare gene expression between the control and heat-stress samples. DESeq2 was used to account for differences in sequencing depth and biological variation between samples and to identify genes whose expression differed between conditions.
+
+Genes were considered significantly differentially expressed when their **adjusted p-value (padj) was less than 0.05**. Both positive and negative log2 fold-change values were considered, representing upregulated and downregulated genes, respectively.
+
+** Identification of Differentially Expressed Genes
+
+The DESeq2 analysis tested approximately **32,833 genes** and identified **541 significant differentially expressed genes (DEGs)** using the adjusted p-value threshold of 0.05. The significant genes included both upregulated and downregulated genes.
+
+Several genes were selected for further biological interpretation. These included **AT5G59720** and **AT2G29500**, which are associated with heat-shock and chaperone functions, as well as **AT1G70850** and **AT2G42530**, which are associated with stress responses.
+
+** Comparison with the Published Study
+
+The results from the Galaxy re-analysis were compared with the findings reported by Sun et al. (2020). The comparison focused on the overall heat-stress response, differentially expressed genes, and the specific genes highlighted in the published study.
+
+The authors reported **4,767 significant genes** under heat stress, consisting of **2,711 upregulated and 2,056 downregulated genes**. In contrast, our Galaxy analysis identified **541 significant DEGs**. The specific heat-shock genes highlighted by the authors, including **HSP70, HSP101, HSP21, and HSP18.2**, were not confirmed in our analyzed results. However, our analysis identified other heat-shock and stress-related genes, indicating a similar general response to heat stress.
+
+** Reproducibility and Workflow Differences
+
+The re-analysis followed the general workflow described in the published study, including quality control, trimming, read alignment, gene counting, and differential expression analysis. However, some steps could not be reproduced exactly. The main differences were the use of **TopHat instead of TopHat2** and the use of the **NCBI reference genome and annotation instead of TAIR10 and Araport11**.
+
+These changes were documented because differences in alignment software, reference genome, annotation, and analysis parameters can affect read mapping, gene assignment, and differential expression results. Therefore, while the analysis reproduced the general biological response to heat stress, the exact results of the published study were not fully reproduced.
 
