@@ -1,4 +1,6 @@
-# Heat Stress Analysis Workflow
+# Galaxy Workflow: Heat Stress Analysis
 
-The complete Galaxy workflow can be accessed here:  
-[Heat Stress Workflow on Galaxy](https://usegalaxy.org/u/ray_gee_lisondra/w/heat-stress)
+We used Galaxy to run RNA‑seq differential expression analysis comparing **Heat Stress vs Control**.  
+The workflow includes quality control, alignment, and DESeq2 analysis.
+
+🔗 [View the Galaxy Workflow on Galaxy](https://usegalaxy.org/u/ray_gee_lisondra/w/heat-stress)
